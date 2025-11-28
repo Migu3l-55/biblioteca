@@ -9,7 +9,7 @@ export default class extends BaseSchema {
 
       table.string("titulo")
       table.string("autor")
-      table.date("ano_lancamento")
+      table.dateTime("data_publicacao")
       table.string("genero")
 
       table.timestamp('created_at')

@@ -12,7 +12,7 @@ export default class Livro extends BaseModel {
   declare autor : String
 
   @column()
-  declare anoLancamento : Date
+  declare dataPublicacao : DateTime
 
   @column()
   declare genero : String

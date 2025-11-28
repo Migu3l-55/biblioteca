@@ -22,7 +22,10 @@ export default class LivrosController {
   
   async store({ request }: HttpContext) {
     const payload = await request.validateUsing(createLivroValidator);
-    const livro = await Livro.create(payload)
+    const livro = await Livro.create({
+      ...payload,
+      dataPublicacao: DateTime.fromJSDate(payload.dataPublicacao)
+    })
     return livro;
   } 
   //captura o formulário, mas não será usado em nosso projeto (formulário está feito com svelte)
